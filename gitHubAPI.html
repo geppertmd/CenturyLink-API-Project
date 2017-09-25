@@ -18,7 +18,6 @@
               //vm.data = true;
               vm.name = res.data.name;
               vm.followers = res.data.followers;
-              vm.repositories = res.data.repositories;
               vm.loading = false;
               })
             }
@@ -26,9 +25,10 @@
 	 </script>
 </head>
 <body ng-controller='MainController as vm'>
-  <label for="enter">Enter a username</label>
+  <label for="enter">Enter a Github username: </label> 
 	<input type="text" ng-model="user.name" name="enter">
   <button ng-click="vm.fetchData(user)">GO!</button>
+  <p>By clicking "GO!" the JSON returned by the API will be displayed.</p>
   <h4 ng-if="vm.loading === true">Loading...</h4>
    <h3>{{vm.data}}</h3> 
   <!--<h3 ng-hide="vm.data === false">Name: {{vm.name}} --- Followers: {{vm.followers}}</h3> -->
